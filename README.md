@@ -1,2 +1,13 @@
-# c-samples
-C Language sample cods.
+# 概要
+C言語サンプルコード
+
+# このリポジトリは何？
+c標準ライブラリを使ったサンプルコードとかを置いておく。
+
+# このコードのライセンス
+Creative Commons 
+
+# 使用環境
+gcc 9.4.0
+GNU Make 4.2.1
+
