@@ -1,6 +1,6 @@
+#include "make_argv.h"
 #include <stddef.h>
 #include <string.h>
-#include "make_argv.h"
 
 /**
  * @desc str をデリミタで区切り、argvで指定される配列にトークンを格納する。
@@ -25,8 +25,8 @@ int32_t make_argv(char *str, char **argv, int32_t max_args) {
     const char *delim = " \t\r\n"; // トークン区切り文字として、スペース,
                                    // タブ、CR, LFを対象とする。
 
-    while ((*p != '\0') // 文字列の終端でない？
-	    && ((args + 1u) < max_args)) { // トークン配列に空きがある？
+    while ((*p != '\0')                          // 文字列の終端でない？
+           && ((args + 1u) < max_args)) {        // トークン配列に空きがある？
         while ((*p != '\0')                      // 文字列の終端でない？
                && (strchr(delim, *p) != NULL)) { // この文字はデリミタに含まれる？
             p++;
