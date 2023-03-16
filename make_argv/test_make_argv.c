@@ -43,13 +43,13 @@ int main(int argc, char **argv) {
 
     if (argc > 1L) {
         for (int i = 1L; i < argc; i++) {
-            if (do_test(argv[i])) {
+            if (!do_test(argv[i])) {
                 retval = EXIT_FAILURE;
             }
         }
     } else {
         for (uint32_t i = 0u; i < TestStringCount; i++) {
-            if (do_test(TestStrings[i])) {
+            if (!do_test(TestStrings[i])) {
                 retval = EXIT_FAILURE;
             }
         }
