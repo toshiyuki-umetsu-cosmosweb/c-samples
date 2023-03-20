@@ -74,7 +74,7 @@ static bool do_test(const char *test_str) {
         fprintf(stderr, "Could not allocate memory. %s\n", strerror(errno));
         retval = false;
     } else {
-        strncpy(buf, test_str, sizeof(buf) - 1u);
+        strncpy(buf, test_str, len + 1u);
         buf[len] = '\0';
 
         char *tokens[MAX_TOKENS];
@@ -85,6 +85,7 @@ static bool do_test(const char *test_str) {
             print_str(test_str);
             putchar('\"');
             putchar('\n');
+	    printf("  token_count = %d\n", token_count);
             for (int32_t i = 0L; i < token_count; i++) {
                 printf("  token[%d]=\"", i);
                 print_str(tokens[i]);
