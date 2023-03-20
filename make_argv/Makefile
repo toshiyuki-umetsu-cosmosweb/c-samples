@@ -1,5 +1,5 @@
 CC = clang
-SRCS = test_make_argv.c make_argv.c
+SRCS = test_make_argv.c make_argv.c ../common/print_str.c
 OBJS = $(SRCS:.c=.o)
 CFLAGS = -g -Wall
 LDFLAGS = -g
@@ -16,7 +16,7 @@ $(TARGET) : $(OBJS)
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 clean:
-	rm -f $(TARGET) *.o
+	rm -f $(TARGET) $(OBJS) *.o
 
 
 
